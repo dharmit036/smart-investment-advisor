@@ -1,0 +1,8 @@
+django==1.11.27
+numpy
+matplotlib
+Image
+bs4
+pandas
+pandas-datareader
+

@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="dashboard-main-wrapper">
+    div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/">mr.money</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Market at a Glance</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Navigate Yourself Here
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Home <span class="badge badge-success">6</span></a>
+                                
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/recommand/" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>View Recommandation<span class="badge badge-success">6</span></a>
+                                
+                            </li>
+                        
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">SignUp Yourself</h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">SignUp</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">Please fill below details</h5>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <form method="POST" class="post-form">
+                                        {% csrf_token %}  
+                                        <!--
+                                        {% for field in form %}
+                                        <div class="form-group" style="font-family:verdana">
+                                            {{ field.label_tag }} 
+                                            {{ field }}
+                                        </div>
+                                        {% endfor %} 
+                                        -->
+                                        <div class="form-group">
+                                            <label for="username">Set new Username:</label>
+                                            <input type="text" name="username" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="password">Set New Password:</label>
+                                            <input type="password" name="password" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="name">Enter your Name:</label>
+                                            <input type="text" name="name" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email">Enter your email id:</label>
+                                            <input type="text" name="email" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone">Please provide contact no:</label>
+                                            <input type="text" name="phone" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="job">What is your job domain?</label>
+                                            <select name="job">
+                                                <option value="government">Government</option>
+                                                <option value="private">Private</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="income">What is your annual income?(Please write in digits only)</label>
+                                            <input type="text" name="income" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="span">Which type of duration, you want to invest in stock market?</label>
+                                            <select name="span">
+                                                <option value="weekly">Weekly</option>
+                                                <option value="monthly">Monthly</option>
+                                                <option value="yearly">Yearly</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="problem">Did you face any problem regarding to stock investment?(If yes, mention it using ',')</label>
+                                            <input type="text" name="problem" class="form-control" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="ex_return">How much you expect from your investment?</label>
+                                            <input type="text" name="ex_return" class="form-control" required="required" />
+                                        </div>
+
+                                    <button type="submit" class="save btn btn-default">Submit</button> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+{% endblock %}

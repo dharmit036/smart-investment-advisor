@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Home Page</title>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    </head>
+
+    <body>
+ 
+    {% block content %}
+        <div id="container" style="width:55%;">
+       <canvas id="myChart" width="40%" height="60%">12343</canvas>
+       </div>
+       <script src="https://code.highcharts.com/highcharts.src.js"></script>
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+       <script>
+        Highcharts.chart('container', {
+    
+        title: {
+            text: 'BSE Sensex Ups and Downs in past year'
+        },
+    
+        subtitle: {
+            text: 'Source: in.finance.yahoo.com'
+        },
+    
+        yAxis: {
+            title: {
+                text: 'Price Range'
+            }
+        },
+        xAxis:{
+            title: {
+                text: 'Date'
+            },
+            categories:[{% for date in date %} JSON.stringify("{{ date|escapejs }}") {% if not forloop.last%},{% endif %}{% endfor %}]
+        },
+    
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+    
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+            }
+        },
+    
+        series: [{
+            name: 'Close Price',
+            data:  [{% for i in data %}{{ i }}{% if not forloop.last%},{% endif %}{% endfor %}],
+            color: 'red',
+            },
+            {
+                name: 'Open Price',
+                data: [{% for i in data_open %}{{ i }}{% if not forloop.last%},{% endif %}{% endfor %}],
+                color: 'blue',
+            }],
+    
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    
+    });
+           </script>
+       {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>mr.money-An Investment Advisor</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'vendor/fonts/circular-std/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'libs/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/fonts/fontawesome/css/fontawesome-all.css'%}">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+</head>
+<!-- ============================================================== -->
+<!-- signup form  -->
+<!-- ============================================================== -->
+
+<body>
+    {% block content %}
+
+    <!-- ============================================================== -->
+    <!-- signup form  -->
+    <!-- ============================================================== -->
+    <form class="splash-container" method='POST'>
+        {% csrf_token %} 
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-1">Registration Form</h3>
+                <p>Please enter your information.</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" for="username" type="text" name="username" required="" placeholder="Username" autocomplete="off">
+                </div>
+               
+                <div class="form-group">
+                    
+                    <input type="password" name="password" class="form-control" required="required" placeholder="Set New Password"/>
+                </div>
+
+                <div class="form-group">
+                  
+                    <input type="text" name="name" class="form-control" required="required" placeholder="Enter your Name"/>
+                </div>
+
+                <div class="form-group">
+                  
+                    <input type="text" name="email" class="form-control" required="required" placeholder="Enter your email id"/>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" name="phone" class="form-control" required="required" placeholder="Please provide contact no"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="job" class="form-control" required="required" placeholder="What is your job domain?"/>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" name="income" class="form-control" required="required" placeholder="What is your annual income?(digits only)"/>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" name="span" class="form-control" required="required" placeholder="Which type of duration, for invest in stock?"/>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" name="problem" class="form-control" required="required" placeholder="Did you face any problem regarding to stock investment?"/>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" name="ex_return" class="form-control" required="required" placeholder="How much you expect from your investment?"/>
+                </div>
+
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit">Register My Account</button>
+                </div>
+                
+            <div class="card-footer bg-white">
+                <p>Already member? <a href="/login/" class="text-secondary">Login Here.</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+
+ 
+</html>
+{% endblock %}

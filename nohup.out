@@ -1,0 +1,12 @@
+Unhandled exception in thread started by <function wrapper at 0x7fb1701a2578>
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2020 - 12:39:38
+Django version 1.11.27, using settings 'test_3.settings'
+Starting development server at http://0:3000/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "/home/ubuntu/project/myenv/local/lib/python2.7/site-packages/django/utils/autoreload.py", line 236, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+TypeError: 'NoneType' object is not callable
